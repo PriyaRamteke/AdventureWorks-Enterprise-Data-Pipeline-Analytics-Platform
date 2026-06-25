@@ -1,0 +1,17 @@
+{
+	"name": "create schema",
+	"properties": {
+		"content": {
+			"query": "create schema gold;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "newSQLdb",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

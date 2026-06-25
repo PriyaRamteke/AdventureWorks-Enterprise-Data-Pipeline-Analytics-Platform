@@ -1,0 +1,17 @@
+{
+	"name": "external tables",
+	"properties": {
+		"content": {
+			"query": "CREATE MASTER KEY ENCRYPTION BY PASSWORD='expendable@1008'\n\nCREATE DATABASE SCOPED CREDENTIAL cred_priya\nWITH \nIDENTITY = 'Managed Identity'\n\nCREATE EXTERNAL DATA SOURCE source_silver\nWITH(\n    LOCATION ='https://awdatalakestorageaccount.blob.core.windows.net/silver',\n    CREDENTIAL= cred_priya\n)\n\nCREATE EXTERNAL DATA SOURCE source_gold\nWITH(\n    LOCATION ='https://awdatalakestorageaccount.blob.core.windows.net/gold',\n    CREDENTIAL= cred_priya\n)\n\nCREATE EXTERNAL FILE FORMAT format_parquet\nWITH(\n    FORMAT_TYPE=PARQUET,\n    DATA_COMPRESSION= 'org.apache.hadoop.io.compress.SnappyCodec'\n)\n\nCREATE EXTERNAL TABLE gold_extsales\nWITH(\n    LOCATION ='extsales',\n    DATA_SOURCE= source_gold,\n    FILE_FORMAT= format_parquet\n)AS select * from gold.sales\n\nselect * from gold.sales",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "newSQLdb",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

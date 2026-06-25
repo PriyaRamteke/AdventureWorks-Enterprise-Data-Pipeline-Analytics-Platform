@@ -1,0 +1,17 @@
+{
+	"name": "create views gold",
+	"properties": {
+		"content": {
+			"query": "--create Territories view\n------------------\ncreate view gold.territories\nas \nselect * \nfrom OPENROWSET(\n    BULK 'https://awdatalakestorageaccount.dfs.core.windows.net/silver/AdventureWorks_Territories/',\n    FORMAT = 'PARQUET'\n) as query1",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "newSQLdb",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
