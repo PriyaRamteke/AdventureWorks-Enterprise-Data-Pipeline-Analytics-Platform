@@ -1,0 +1,23 @@
+{
+	"name": "DS_http",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Http_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "PriyaRamteke/AdventureWorks-Enterprise-Data-Pipeline-Analytics-Platform/refs/heads/main/datasets/AdventureWorks_Products.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

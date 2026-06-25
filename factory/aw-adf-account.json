@@ -1,0 +1,15 @@
+{
+	"name": "aw-adf-account",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "72cf2d43-24d0-47dd-981a-1a8f56445848",
+		"tenantId": "52479509-76ea-4d47-b414-8dfefc8b97b6"
+	}
+}
